@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TapRush Privacy Policy (Draft) | Pompiko</title>
+    <meta
+      name="description"
+      content="Draft privacy policy for TapRush: Beat the Clock. Requires owner verification before App Store use."
+    />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#4d78ff" />
+    <link rel="icon" type="image/png" href="../../assets/img/favicon-48.png" />
+    <link rel="apple-touch-icon" href="../../assets/img/taprush-icon-180.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="TapRush Privacy Policy (Draft)" />
+    <meta
+      property="og:description"
+      content="Draft privacy disclosures for TapRush — not verified for App Store publication yet."
+    />
+    <meta property="og:image" content="../../assets/img/taprush-icon-512.png" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="stylesheet" href="../../assets/css/site.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="../../">
+          <span class="brand__mark">Pompiko</span>
+          <span class="brand__tag">Games</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="../support/">Support</a>
+          <a href="./" aria-current="page">Privacy</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="wrap">
+      <header class="hero" style="text-align: left; padding-bottom: 0">
+        <p class="hero__eyebrow">Legal · Draft</p>
+        <h1 class="page-title">TapRush: Beat the Clock — Privacy Policy</h1>
+        <p class="lede">
+          Adapted from the repository draft in <code>docs/release/privacy-policy-draft.md</code>.
+          This page is <strong>not</strong> an approved public policy until placeholders are filled
+          and the owner confirms it against shipping SDKs and App Store privacy answers.
+        </p>
+      </header>
+
+      <div class="callout callout--danger" role="alert">
+        <strong>Do not use this URL in App Store Connect yet.</strong>
+        Status: <strong>DRAFT — unverified</strong>. Effective date, retention period, transfer
+        details, and final SDK configuration still require owner confirmation.
+        <code>noindex</code> is set until the draft is approved.
+      </div>
+
+      <section class="panel legal" aria-labelledby="policy-title">
+        <h2 id="policy-title">1. Who we are</h2>
+        <p>
+          TapRush (“the App”) is published under the <strong>Pompiko</strong> brand and operated
+          by <strong>Lumora Digital Ventures</strong>, a sole proprietorship based in Malaysia (“we”,
+          “us”).
+        </p>
+        <p>
+          Privacy contact:
+          <a class="contact-email" href="mailto:pompiko.support@gmail.com"
+            >pompiko.support@gmail.com</a
+          >
+        </p>
+        <p class="meta-line">
+          Effective date: <strong>[EFFECTIVE_DATE — placeholder]</strong> · Public URL:
+          <strong>[this page, once approved]</strong>
+        </p>
+
+        <h2>2. Scope</h2>
+        <p>This draft applies to the TapRush mobile applications for Android and iOS. It covers:</p>
+        <ul>
+          <li>Information processed on your device</li>
+          <li>
+            Information processed by advertising and store platforms when those features are
+            enabled
+          </li>
+          <li>
+            Information processed by our purchase-verification service when in-app purchases are
+            enabled
+          </li>
+        </ul>
+        <p>
+          Web browser play, if any, may have different limits (for example, ads and store purchases
+          may be unavailable).
+        </p>
+
+        <h2>3. Information we collect or process</h2>
+        <h3>3.1 Information stored on your device</h3>
+        <p>
+          TapRush stores gameplay and preference data locally on your device (for example via the
+          app’s local storage), including:
+        </p>
+        <ul>
+          <li>Progress (unlocked levels, stars, best times, achievements)</li>
+          <li>Settings (sound, haptics, reduced effects)</li>
+          <li>Anonymous identifiers used only on-device for local analytics</li>
+          <li>
+            Local gameplay and purchase-related analytics events (not used as a payment record)
+          </li>
+          <li>
+            Temporary purchase-recovery records (pending grants / life credits) when purchases are
+            used. Pending grants may briefly include purchase proofs needed to finish granting
+            lives after an interruption; those proofs are cleared when fulfillment completes or the
+            local records are removed.
+          </li>
+          <li>
+            Server-issued installation credentials used to secure purchase verification when
+            purchases are enabled
+          </li>
+        </ul>
+        <p>
+          We do <strong>not</strong> require you to create an account or provide your name, email,
+          or phone number to play.
+        </p>
+
+        <h3>3.2 Advertising (when ads are enabled)</h3>
+        <p>
+          When rewarded advertisements are enabled, Google’s advertising and consent components
+          (AdMob / User Messaging Platform) may process device and advertising-related information
+          according to Google’s policies and your consent choices. TapRush requests
+          <strong>non-personalized</strong> ads in its rewarded-ad integration. That setting
+          reduces ad personalization; it does <strong>not</strong> mean Google collects no data.
+        </p>
+        <p>
+          Exact technical fields collected by Google’s SDKs are defined by Google, not by
+          TapRush’s custom game code. We do <strong>not</strong> claim that “no personal data is
+          collected” by advertising partners.
+          <em
+            >[VERIFY: production AdMob App/unit IDs must replace Google sample IDs before paid
+            inventory ships.]</em
+          >
+        </p>
+
+        <h3>3.3 In-app purchases (when purchases are enabled)</h3>
+        <p>
+          Purchases are processed by <strong>Apple</strong> (App Store) or
+          <strong>Google</strong> (Google Play). We do not receive your full payment card details.
+        </p>
+        <p>When our purchase-verification service is enabled, we may process:</p>
+        <ul>
+          <li>Purchase product identifiers</li>
+          <li>Transaction identifiers</li>
+          <li>
+            Cryptographic purchase proofs from Apple or Google (sent over HTTPS to verify; stored
+            in our ledger as a <strong>hash</strong>, not as payment card numbers)
+          </li>
+          <li>Platform / app identity checks</li>
+          <li>An anonymous installation credential issued by our service</li>
+          <li>
+            Network-edge signals such as IP address, used to prevent abuse (for example rate
+            limiting)
+          </li>
+        </ul>
+        <p>
+          Localized price strings may be recorded in <strong>on-device</strong> analytics only.
+          <em>[VERIFY: D1 retention policy for ledger and rate-limit records before publish.]</em>
+        </p>
+
+        <h3>3.4 Diagnostics</h3>
+        <p>
+          TapRush does not currently integrate a third-party crash-reporting SaaS in the shipped
+          codebase. Your device operating system may generate its own crash or diagnostic logs
+          outside this App. <em>[Re-check if a crash SDK is added later]</em>
+        </p>
+
+        <h3>3.5 Information we do not intentionally collect</h3>
+        <p>
+          We do not intentionally collect: government ID numbers, precise continuous location for
+          marketing, contacts, photos, microphone audio, or social-media friend lists.
+        </p>
+
+        <h2>4. How we use information</h2>
+        <ul>
+          <li>Operate gameplay, saves, and settings on your device</li>
+          <li>Provide optional rewarded ads and optional paid continues</li>
+          <li>Verify and fulfill in-app purchases and prevent duplicate grants</li>
+          <li>
+            Improve balance and quality using <strong>on-device</strong> analytics (not uploaded to
+            our servers in the current app; this policy will be updated if that changes)
+          </li>
+          <li>Comply with law and platform requirements</li>
+          <li>Respond to support requests you send to our support email</li>
+        </ul>
+
+        <h2>5. Advertising and consent</h2>
+        <p>
+          In regions where required (including via Google’s User Messaging Platform), you may see a
+          consent message before ads are requested.
+        </p>
+        <p>
+          Where available, you can open <strong>Ad Privacy</strong> in the App’s Settings to review
+          or change privacy options provided by the consent platform.
+        </p>
+        <p>
+          If you do not consent where consent is required, ad-based continues may be unavailable.
+          You can still Retry or Exit without paying.
+        </p>
+        <p>
+          <strong>App Tracking Transparency (Apple):</strong> TapRush’s current design does not
+          present an ATT prompt and does not seek the advertising identifier for cross-app
+          tracking. If personalized ads or ATT are enabled later, this policy and App Store
+          disclosures will be updated.
+        </p>
+
+        <h2>6. In-app purchases</h2>
+        <p>
+          Optional paid continues grant temporary extra lives within a run. Retry remains free.
+          Consumable purchases are generally not “restored” like non-consumable unlocks after
+          reinstall; same-device recovery mechanisms may apply when verification succeeds.
+        </p>
+        <p>
+          Purchases use Apple’s and Google’s terms and privacy practices in addition to this policy.
+        </p>
+
+        <h2>7. Service providers</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Provider</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Google (AdMob / UMP)</td>
+              <td>Rewarded ads and consent messaging</td>
+            </tr>
+            <tr>
+              <td>Apple App Store / Google Play</td>
+              <td>Payment processing for in-app purchases</td>
+            </tr>
+            <tr>
+              <td>Cloudflare (Workers / D1)</td>
+              <td>Purchase verification and fulfillment ledger when enabled</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>These providers process data under their own terms and privacy policies.</p>
+
+        <h2>8. Storage and security</h2>
+        <ul>
+          <li>Gameplay progress is stored primarily on your device.</li>
+          <li>
+            Purchase-verification records (when enabled) are stored with our cloud provider with
+            access controls and hashed purchase tokens where implemented.
+          </li>
+          <li>
+            No security measure is perfect; we work to protect information using reasonable
+            technical measures appropriate to a small mobile game.
+          </li>
+        </ul>
+
+        <h2>9. Data retention</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Typical retention</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>On-device progress, settings, local analytics</td>
+              <td>Until you uninstall the App or clear app storage</td>
+            </tr>
+            <tr>
+              <td>Purchase-verification ledger (when enabled)</td>
+              <td>
+                Retained as needed for fraud prevention, fulfillment, refunds, and legal
+                obligations —
+                <strong>[RETENTION_PERIOD — placeholder]</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>Support emails you send us</td>
+              <td>As needed to resolve your request</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>10. International data transfers</h2>
+        <p>
+          Lumora Digital Ventures is based in Malaysia. Service providers (including Google, Apple, and
+          Cloudflare) may process data in other countries. Our purchase-verification database is
+          configured in Cloudflare D1 with an <strong>APAC</strong> label in our deployment notes;
+          Google and Apple may process data in additional regions under their policies. Where
+          required, we rely on appropriate transfer mechanisms offered by those providers.
+          <strong
+            >[TRANSFER_DETAILS — confirm Cloudflare dashboard region/DPA and final wording before
+            publish]</strong
+          >.
+        </p>
+
+        <h2>11. Children’s privacy and age</h2>
+        <p>
+          TapRush is a skill-based tap game intended for a <strong>general audience</strong> (owner
+          confirmed). It is <strong>not</strong> specifically directed at children under 13 (or the
+          equivalent minimum age in your country), and we do not knowingly collect personal
+          information from children for account registration (we do not offer accounts).
+        </p>
+        <p>
+          Our AdMob integration does not enable “Designed for Families” / child-directed product
+          modes in app code. Exact Google request-configuration defaults may still apply under
+          Google’s policies. Store age ratings and regional rules may further restrict availability.
+          <em
+            >[Outstanding: choose the numeric App Store / Play age rating; do not enroll Kids or
+            Designed for Families while using general AdMob without a separate compliance plan.]</em
+          >
+        </p>
+
+        <h2>12. Your rights and requests</h2>
+        <p>
+          Depending on your location, you may have rights to access, correct, delete, or restrict
+          certain processing, or to object to certain uses.
+        </p>
+        <p>
+          Because most gameplay data is on your device, you can delete it by uninstalling the App
+          or clearing app storage.
+        </p>
+        <p>
+          For requests related to purchase-verification records or support correspondence, email
+          <a class="contact-email" href="mailto:pompiko.support@gmail.com"
+            >pompiko.support@gmail.com</a
+          >
+          and include enough detail for us to locate relevant records (for example platform and
+          approximate purchase time). We may need to verify your request.
+        </p>
+        <p>
+          We do not sell your personal information as “data brokers” sell lists. Advertising
+          partners may use device signals for ads under their policies and your choices — see
+          Google’s and Apple’s disclosures.
+        </p>
+
+        <h2>13. Changes</h2>
+        <p>
+          We may update this policy. The “Effective date” will change when a new verified version
+          is published at this URL.
+        </p>
+
+        <h2>14. Contact</h2>
+        <p>
+          Brand: <strong>Pompiko</strong> · Legal operator:
+          <strong>Lumora Digital Ventures</strong> (Malaysia)<br />
+          Email:
+          <a class="contact-email" href="mailto:pompiko.support@gmail.com"
+            >pompiko.support@gmail.com</a
+          >
+        </p>
+      </section>
+
+      <section class="panel" aria-labelledby="owner-checklist-title">
+        <h2 id="owner-checklist-title">Owner checklist before App Store use</h2>
+        <ul class="checklist">
+          <li>Choose shipping ads/IAP profile (real ads vs sample vs ads-off)</li>
+          <li>Set an Effective date</li>
+          <li>Confirm AdMob NPA / UMP / ATT posture and Apple “tracking” answer</li>
+          <li>Replace sample AdMob IDs + complete SKAdNetwork list if paid ads ship</li>
+          <li>Confirm IAP verify Worker/D1 retention &amp; Cloudflare transfer wording</li>
+          <li>Align Apple App Privacy &amp; Play Data Safety forms</li>
+          <li>Remove <code>noindex</code> and draft banners after approval</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <nav aria-label="Footer">
+          <a href="../../">Home</a>
+          <a href="../support/">TapRush Support</a>
+          <a href="./">Privacy Policy</a>
+        </nav>
+        <p>
+          <strong>Pompiko</strong> · Little Games. Big Fun. · Draft privacy page
+          <span class="muted">© <span id="year">2026</span></span>
+        </p>
+        <p class="muted">
+          Support:
+          <a href="mailto:pompiko.support@gmail.com">pompiko.support@gmail.com</a>
+          · Operated by <strong>Lumora Digital Ventures</strong>
+        </p>
+      </div>
+    </footer>
+    <script src="../../assets/js/site.js" defer></script>
+  </body>
+</html>

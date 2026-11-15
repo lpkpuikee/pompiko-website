@@ -1,0 +1,70 @@
+# Deploy the public Pompiko support website to GitHub Pages.
+# Does NOT publish the draft privacy policy (source kept in taprush/privacy/).
+#
+# Owner setup (once):
+# 1. Repo Settings → Pages → Build and deployment → Source: GitHub Actions
+# 2. Push this workflow (or run workflow_dispatch)
+# 3. Add Privacy URL in App Store Connect only after the policy is approved
+name: Deploy website to GitHub Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-website
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Stage public site (exclude draft privacy)
+        run: |
+          set -euo pipefail
+          mkdir -p public-site
+          rsync -a \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude 'taprush/privacy/' \
+            --exclude 'taprush/privacy-coming-soon.html' \
+            --exclude 'README.md' \
+            --exclude 'public-site/' \
+            ./ public-site/
+          # Published stub only — draft source stays in taprush/privacy/ (not uploaded).
+          mkdir -p public-site/taprush/privacy
+          cp taprush/privacy-coming-soon.html public-site/taprush/privacy/index.html
+          if grep -Rql 'DRAFT — unverified' public-site; then
+            echo "Refusing to publish draft privacy policy content" >&2
+            exit 1
+          fi
+          if ! grep -q 'not</strong> a privacy policy' public-site/taprush/privacy/index.html; then
+            echo "Privacy stub missing non-policy disclaimer" >&2
+            exit 1
+          fi
+          ls -la public-site public-site/taprush public-site/taprush/privacy
+
+      - name: Upload website artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public-site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

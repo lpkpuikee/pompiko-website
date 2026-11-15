@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" data-root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page not found | Pompiko</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#4d78ff" />
+    <link rel="icon" type="image/png" href="./assets/img/favicon-48.png" />
+    <link rel="stylesheet" href="./assets/css/site.css" />
+    <script>
+      // Fix asset paths when GitHub Pages serves 404.html from a nested URL.
+      (function () {
+        var parts = location.pathname.split("/").filter(Boolean);
+        // Project site: /pompiko-website/... → root is /pompiko-website/
+        var root = "/";
+        if (parts.length && parts[0] !== "taprush" && parts[0] !== "assets" && parts[0] !== "404.html") {
+          root = "/" + parts[0] + "/";
+        }
+        document.documentElement.setAttribute("data-root", root);
+        function fix(attr) {
+          document.querySelectorAll("[" + attr + "]").forEach(function (el) {
+            var v = el.getAttribute(attr);
+            if (v && v.indexOf("./") === 0) {
+              el.setAttribute(attr === "href" || attr === "src" ? attr : attr, root + v.slice(2));
+            }
+          });
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+          document.querySelectorAll('link[rel="stylesheet"], link[rel="icon"]').forEach(function (el) {
+            var href = el.getAttribute("href");
+            if (href && href.indexOf("./") === 0) el.setAttribute("href", root + href.slice(2));
+          });
+          document.querySelectorAll("a[href^='./']").forEach(function (el) {
+            el.setAttribute("href", root + el.getAttribute("href").slice(2));
+          });
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="./">
+          <span class="brand__mark">Pompiko</span>
+          <span class="brand__tag">Games</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="./taprush/support/">Support</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="wrap">
+      <section class="hero">
+        <p class="hero__eyebrow">404</p>
+        <h1 class="page-title center">This page missed the target</h1>
+        <p class="lede center">The link may be outdated. Try one of these:</p>
+      </section>
+      <section class="panel center">
+        <div class="actions" style="justify-content: center">
+          <a class="btn btn--primary" href="./">Pompiko home</a>
+          <a class="btn btn--secondary" href="./taprush/support/">TapRush Support</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>
+          <strong>Pompiko</strong> · Little Games. Big Fun.
+          <span class="muted">© <span id="year">2026</span></span>
+        </p>
+        <p class="muted">
+          Support:
+          <a href="mailto:pompiko.support@gmail.com">pompiko.support@gmail.com</a>
+        </p>
+      </div>
+    </footer>
+    <script src="./assets/js/site.js" defer></script>
+  </body>
+</html>
