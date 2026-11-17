@@ -1,10 +1,9 @@
-# Deploy the public Pompiko support website to GitHub Pages.
-# Does NOT publish the draft privacy policy (source kept in taprush/privacy/).
+# Deploy the public Pompiko website to GitHub Pages.
 #
 # Owner setup (once):
 # 1. Repo Settings → Pages → Build and deployment → Source: GitHub Actions
 # 2. Push this workflow (or run workflow_dispatch)
-# 3. Add Privacy URL in App Store Connect only after the policy is approved
+# 3. Add Privacy URL in App Store Connect / AdMob only after the published page is verified
 name: Deploy website to GitHub Pages
 
 on:
@@ -35,27 +34,32 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Stage public site (exclude draft privacy)
+      - name: Stage public site
         run: |
           set -euo pipefail
           mkdir -p public-site
           rsync -a \
             --exclude '.git/' \
             --exclude '.github/' \
-            --exclude 'taprush/privacy/' \
             --exclude 'taprush/privacy-coming-soon.html' \
             --exclude 'README.md' \
             --exclude 'public-site/' \
             ./ public-site/
-          # Published stub only — draft source stays in taprush/privacy/ (not uploaded).
-          mkdir -p public-site/taprush/privacy
-          cp taprush/privacy-coming-soon.html public-site/taprush/privacy/index.html
-          if grep -Rql 'DRAFT — unverified' public-site; then
-            echo "Refusing to publish draft privacy policy content" >&2
+          # Refuse to publish draft / placeholder privacy content.
+          if grep -Rql 'DRAFT — unverified\|\[EFFECTIVE_DATE\|not</strong> a privacy policy\|Privacy policy not published yet' public-site/taprush/privacy; then
+            echo "Refusing to publish draft or placeholder privacy policy content" >&2
             exit 1
           fi
-          if ! grep -q 'not</strong> a privacy policy' public-site/taprush/privacy/index.html; then
-            echo "Privacy stub missing non-policy disclaimer" >&2
+          if ! grep -q 'TapRush: Beat the Clock — Privacy Policy' public-site/taprush/privacy/index.html; then
+            echo "Privacy page missing expected title" >&2
+            exit 1
+          fi
+          if ! grep -q 'mailto:pompiko.support@gmail.com' public-site/taprush/privacy/index.html; then
+            echo "Privacy page missing support email" >&2
+            exit 1
+          fi
+          if grep -q 'noindex' public-site/taprush/privacy/index.html; then
+            echo "Privacy page must not set noindex when publishing" >&2
             exit 1
           fi
           ls -la public-site public-site/taprush public-site/taprush/privacy
