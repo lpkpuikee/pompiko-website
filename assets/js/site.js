@@ -5,7 +5,6 @@
 (function () {
   const root = document.documentElement;
   const configured = root.getAttribute("data-root") || "./";
-  // Normalize trailing slash
   const base = configured.endsWith("/") ? configured : configured + "/";
   root.style.setProperty("--site-root", base);
 
@@ -21,4 +20,14 @@
 
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
+
+  const header = document.querySelector(".site-header");
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.getElementById("primary-nav");
+  if (header && toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const open = header.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  }
 })();

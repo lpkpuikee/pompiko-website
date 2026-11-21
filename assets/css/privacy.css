@@ -161,6 +161,52 @@ summary:focus-visible {
   text-underline-offset: 0.28em;
 }
 
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    border: 1px solid var(--pp-border);
+    border-radius: 8px;
+    background: var(--pp-surface);
+    color: var(--pp-ink);
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0.35rem 0 0.65rem;
+  }
+
+  .site-header__inner {
+    flex-wrap: wrap;
+  }
+
+  .site-header.is-open .nav {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 0.55rem 0.65rem;
+    border-radius: 8px;
+  }
+
+  .nav a[aria-current="page"] {
+    background: var(--pp-accent-soft);
+    text-decoration: none;
+  }
+}
+
 /* —— Main shell —— */
 .privacy-main {
   flex: 1;

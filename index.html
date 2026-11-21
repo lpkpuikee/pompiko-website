@@ -3,22 +3,37 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pompiko — Little Games. Big Fun.</title>
+    <title>Pompiko Games — Little Games. Big Fun.</title>
     <meta
       name="description"
-      content="Pompiko is a mobile game studio creating fun, colourful and engaging mobile games. First title: TapRush: Beat the Clock."
+      content="Pompiko is an independent mobile game studio creating colorful, engaging games. Featured title: TapRush: Beat the Clock."
     />
-    <meta name="theme-color" content="#4d78ff" />
+    <meta name="theme-color" content="#6b3fd4" />
+    <link rel="canonical" href="https://lpkpuikee.github.io/pompiko-website/" />
     <link rel="icon" type="image/png" href="./assets/img/favicon-48.png" />
     <link rel="apple-touch-icon" href="./assets/img/taprush-icon-180.png" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Pompiko — Little Games. Big Fun." />
+    <meta property="og:site_name" content="Pompiko" />
+    <meta property="og:url" content="https://lpkpuikee.github.io/pompiko-website/" />
+    <meta property="og:title" content="Pompiko Games — Little Games. Big Fun." />
     <meta
       property="og:description"
-      content="Pompiko creates fun, colourful and engaging mobile games. First up: TapRush: Beat the Clock."
+      content="Independent mobile games with quick bursts of fun. Featured: TapRush: Beat the Clock."
     />
-    <meta property="og:image" content="./assets/img/taprush-icon-512.png" />
+    <meta
+      property="og:image"
+      content="https://lpkpuikee.github.io/pompiko-website/assets/img/taprush-icon-512.png"
+    />
     <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Pompiko Games — Little Games. Big Fun." />
+    <meta
+      name="twitter:description"
+      content="Independent mobile games with quick bursts of fun. Featured: TapRush: Beat the Clock."
+    />
+    <meta
+      name="twitter:image"
+      content="https://lpkpuikee.github.io/pompiko-website/assets/img/taprush-icon-512.png"
+    />
     <link rel="stylesheet" href="./assets/css/site.css" />
   </head>
   <body>
@@ -29,7 +44,18 @@
           <span class="brand__mark">Pompiko</span>
           <span class="brand__tag">Games</span>
         </a>
-        <nav class="nav" aria-label="Primary">
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Menu"
+        >
+          Menu
+        </button>
+        <nav class="nav" id="primary-nav" aria-label="Primary">
+          <a href="./" aria-current="page">Home</a>
+          <a href="./taprush/">TapRush</a>
           <a href="./taprush/support/">Support</a>
           <a href="./taprush/privacy/">Privacy</a>
         </nav>
@@ -37,53 +63,52 @@
     </header>
 
     <main id="main" class="wrap">
-      <section class="hero" aria-labelledby="hero-title">
-        <p class="hero__eyebrow">Mobile game studio</p>
-        <h1 id="hero-title">Little Games. Big Fun.</h1>
-        <p class="hero__sub">
-          Pompiko creates fun, colourful and engaging mobile games — starting with TapRush:
-          Beat the Clock.
+      <header class="page-hero">
+        <p class="eyebrow">Pompiko Games</p>
+        <h1>Little Games. Big Fun.</h1>
+        <p class="lede">
+          We create colorful, engaging mobile games designed to bring quick bursts of fun to
+          everyday life.
         </p>
-      </section>
+      </header>
 
-      <section class="panel" aria-labelledby="games-heading">
-        <h2 id="games-heading" class="visually-hidden" style="position: absolute; width: 1px; height: 1px; overflow: hidden">
-          Games
-        </h2>
-        <article class="game-card">
+      <section class="section" aria-labelledby="featured-heading">
+        <h2 class="section-title" id="featured-heading">Featured Game</h2>
+        <article class="card game-card">
           <img
             class="game-card__icon"
             src="./assets/img/taprush-icon-180.png"
             width="180"
             height="180"
-            alt="TapRush app icon — a cartoon hand tapping a target"
+            alt="TapRush app icon"
           />
           <div>
             <h2>TapRush: Beat the Clock</h2>
-            <p class="meta-line" style="margin-bottom: 0.35rem">First game from Pompiko</p>
+            <p class="meta-line">Reflex arcade · 1,000 levels</p>
             <p>
-              A bright arcade reflex game: tap the targets, dodge the hazards, and finish each
-              level as fast as you can. Chase three-star times across Campaign and Infinity —
-              up to 1,000 levels.
+              A fast-paced reflex arcade game where players race against the clock, hit moving
+              targets, avoid bombs and build impressive combos.
             </p>
             <div class="actions">
-              <a class="btn btn--primary" href="./taprush/support/">Support</a>
-              <a class="btn btn--secondary" href="./taprush/support/#contact">Contact</a>
+              <a class="btn btn--primary" href="./taprush/">Explore TapRush</a>
+              <a class="btn btn--secondary" href="./taprush/support/">Support</a>
             </div>
           </div>
         </article>
       </section>
 
-      <section class="panel panel--tight">
-        <h2>Player help</h2>
-        <p>
-          Looking for how lives, ads, or purchases work? Visit the TapRush support page for
-          getting-started tips and FAQs that match the shipping game.
-        </p>
-        <div class="actions">
-          <a class="btn btn--ghost" href="./taprush/support/#getting-started">Getting started</a>
-          <a class="btn btn--ghost" href="./taprush/support/#faq">FAQs</a>
-          <a class="btn btn--ghost" href="./taprush/support/#contact">Contact</a>
+      <section class="section" aria-labelledby="about-heading">
+        <h2 class="section-title" id="about-heading">About Pompiko</h2>
+        <div class="card">
+          <p>
+            Pompiko is an independent mobile game studio focused on accessible, entertaining
+            games you can pick up in a spare moment. We publish under the Pompiko brand and operate
+            as Lumora Digital Ventures (Malaysia).
+          </p>
+          <p>
+            Our first title is <strong>TapRush: Beat the Clock</strong> — a portrait reflex game
+            built around clear goals, fair challenge, and satisfying timing.
+          </p>
         </div>
       </section>
     </main>
@@ -92,8 +117,9 @@
       <div class="site-footer__inner">
         <nav aria-label="Footer">
           <a href="./">Home</a>
-          <a href="./taprush/support/">TapRush Support</a>
-          <a href="./taprush/privacy/">Privacy Policy</a>
+          <a href="./taprush/">TapRush</a>
+          <a href="./taprush/support/">Support</a>
+          <a href="./taprush/privacy/">Privacy</a>
         </nav>
         <p>
           <strong>Pompiko</strong> — Little Games. Big Fun.

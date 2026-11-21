@@ -3,21 +3,27 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>TapRush: Beat the Clock — Support | Pompiko</title>
+    <title>TapRush Support | Pompiko</title>
     <meta
       name="description"
-      content="Support for TapRush: Beat the Clock — how to play, lives, rewarded ads, purchases, and how to report a bug."
+      content="Support for TapRush: Beat the Clock — how to play, lives, combos, stars, ads, purchases, sharing, and audio settings."
     />
-    <meta name="theme-color" content="#4d78ff" />
+    <meta name="theme-color" content="#6b3fd4" />
+    <link rel="canonical" href="https://lpkpuikee.github.io/pompiko-website/taprush/support/" />
     <link rel="icon" type="image/png" href="../../assets/img/favicon-48.png" />
     <link rel="apple-touch-icon" href="../../assets/img/taprush-icon-180.png" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="TapRush: Beat the Clock — Support" />
+    <meta property="og:site_name" content="Pompiko" />
+    <meta property="og:url" content="https://lpkpuikee.github.io/pompiko-website/taprush/support/" />
+    <meta property="og:title" content="TapRush Support | Pompiko" />
     <meta
       property="og:description"
-      content="Getting started, FAQs, and contact help for TapRush."
+      content="Getting started, FAQs, and contact help for TapRush: Beat the Clock."
     />
-    <meta property="og:image" content="../../assets/img/taprush-icon-512.png" />
+    <meta
+      property="og:image"
+      content="https://lpkpuikee.github.io/pompiko-website/assets/img/taprush-icon-512.png"
+    />
     <meta name="twitter:card" content="summary" />
     <link rel="stylesheet" href="../../assets/css/site.css" />
   </head>
@@ -29,7 +35,18 @@
           <span class="brand__mark">Pompiko</span>
           <span class="brand__tag">Games</span>
         </a>
-        <nav class="nav" aria-label="Primary">
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Menu"
+        >
+          Menu
+        </button>
+        <nav class="nav" id="primary-nav" aria-label="Primary">
+          <a href="../../">Home</a>
+          <a href="../">TapRush</a>
           <a href="./" aria-current="page">Support</a>
           <a href="../privacy/">Privacy</a>
         </nav>
@@ -37,41 +54,38 @@
     </header>
 
     <main id="main" class="wrap">
-      <header class="hero" style="text-align: left; padding-bottom: 0">
-        <p class="hero__eyebrow">TapRush help</p>
-        <h1 class="page-title" id="page-title">TapRush: Beat the Clock — Support</h1>
+      <header class="page-hero">
+        <p class="eyebrow">TapRush help</p>
+        <h1>TapRush: Beat the Clock — Support</h1>
         <p class="lede">
-          Tips and answers based on how TapRush actually works. For privacy disclosures, see the
+          Tips and answers based on how TapRush works today. For privacy disclosures, see the
           <a href="../privacy/">TapRush Privacy Policy</a>. Questions:
-          <a href="mailto:pompiko.support@gmail.com" style="color: var(--gold)"
+          <a class="contact-email" href="mailto:pompiko.support@gmail.com"
             >pompiko.support@gmail.com</a
           >.
         </p>
       </header>
 
-      <section class="panel" id="getting-started" aria-labelledby="getting-started-title">
+      <section class="card section" id="getting-started" aria-labelledby="getting-started-title">
         <h2 id="getting-started-title">Getting Started</h2>
         <p>
-          TapRush is a portrait arcade reflex game. Clear each level by tapping the correct
-          targets as quickly as you can. Your clear time earns up to <strong>3 stars</strong>.
+          TapRush is a portrait reflex arcade game with a continuous journey from
+          <strong>Level 1 to Level 1000</strong>. Clear each level by tapping valid targets as
+          quickly as you can. Your clear time (with a small adjustment for lives lost) earns up to
+          <strong>3 stars</strong> — or <strong>0 stars</strong> if you clear slowly.
         </p>
         <ul>
           <li>
-            <strong>Campaign</strong> introduces mechanics stage by stage (large easy targets
-            first; later stages add lives, precision, hazards, and more).
+            From Home, check <strong>CURRENT LEVEL</strong>, then tap <strong>PLAY</strong> to
+            continue, or open <strong>Level Select</strong> to revisit cleared levels.
           </li>
           <li>
-            <strong>Infinity Rush</strong> unlocks after you clear Campaign level 200 (or otherwise
-            reach Infinity levels) and continues through higher level numbers (up to 1,000 playable
-            levels).
+            Every attempt starts with <strong>three lives</strong>. Empty-space taps and bomb hits
+            cost a life.
           </li>
           <li>
-            Soft tutorials appear the first time a new mechanic shows up — read them, then tap
-            <strong>Got It</strong> to play.
-          </li>
-          <li>
-            From Home, use <strong>Continue</strong> to jump back into your next unlocked level,
-            or open <strong>Select Stage / Level</strong> to pick a level.
+            The run timer starts on your <strong>first valid hit</strong> (not when the level
+            loads).
           </li>
           <li>
             Progress (stars, unlocks, best times, settings) is saved on your device. Uninstalling
@@ -80,48 +94,66 @@
         </ul>
       </section>
 
-      <section class="panel faq" id="faq" aria-labelledby="faq-title">
+      <section class="card faq section" id="faq" aria-labelledby="faq-title">
         <h2 id="faq-title">Frequently Asked Questions</h2>
 
         <details open>
           <summary>1. How do I play TapRush?</summary>
           <p>
-            Tap the glowing targets in the play area. Avoid hazards when they appear (for example
-            bombs or decoys in later levels). The timer starts when you land your first successful
-            hit. Finish all required targets to clear the level, then check your time and star
-            rating on the results screen. You can Retry any level for free.
+            Tap the valid target in the play area. Some levels also show bomb decoys — tapping a
+            bomb costs a life. Empty-space taps also cost a life. Finish all required targets before
+            you run out of lives. On the results screen you can advance, retry, or share when your
+            device supports sharing.
           </p>
         </details>
 
         <details>
-          <summary>2. How do I unlock new levels?</summary>
+          <summary>2. How do levels unlock?</summary>
           <p>
-            Clearing a level unlocks the next one in sequence. Stars and best times are recorded
-            per level so you can improve later. Use Stage / Level select to revisit cleared levels
-            or jump to your next unlocked challenge. Infinity content unlocks after the Campaign
-            requirements are met in-game.
+            Clearing a level unlocks the next one in sequence from 1 through 1000 as one continuous
+            journey. Level Select lets you replay completed levels and see stars / best times when
+            recorded.
           </p>
         </details>
 
         <details>
           <summary>3. How does the lives system work?</summary>
           <p>
-            Early Campaign levels (Stage 1) do not use lives. From Stage 2 onward, levels typically
-            start with <strong>3 hearts</strong>. Misses and certain hazard hits cost a life. When
-            you run out of lives, the run pauses and you can choose a continue option (if available
-            in your build), Retry the level for free, or leave the run.
+            Every level starts with <strong>three lives</strong>. Misses (including empty-space
+            taps) and bomb hits cost a life. When you run out of lives, the run pauses and you may
+            be offered continue options when those features are enabled for your build. You can
+            always <strong>Retry</strong> the level for free or leave the run.
           </p>
         </details>
 
         <details>
-          <summary>4. How can I earn extra lives?</summary>
+          <summary>4. How do bombs work?</summary>
+          <p>
+            On bomb levels, one or two bombs can appear at the same time as a valid target. Bombs
+            may be stationary or move more slowly than the target. Tap only the valid target —
+            never the bomb.
+          </p>
+        </details>
+
+        <details>
+          <summary>5. How do combos and stars work?</summary>
+          <p>
+            Successful hits build an optional combo streak with milestone celebrations. Combos do
+            <strong>not</strong> change your star rating. Stars use adjusted time: active gameplay
+            time plus about two seconds per life lost. Finishing above the one-star gate still
+            clears the level but awards <strong>0 stars</strong>.
+          </p>
+        </details>
+
+        <details>
+          <summary>6. How can I earn extra lives after running out?</summary>
           <p>
             On Out of Lives, when continues are enabled for your platform build, you may be offered:
           </p>
           <ul>
             <li>
               A <strong>rewarded advertisement</strong> — watch to completion to receive continue
-              lives for that attempt.
+              lives for that attempt (availability depends on ads, consent, and fill).
             </li>
             <li>
               Optional <strong>in-app life packs</strong> (consumable continues) processed by the
@@ -129,24 +161,24 @@
             </li>
           </ul>
           <p>
-            Retry remains free. Paid continues grant temporary extra lives within the current run;
-            they are not a permanent unlock of all future lives.
+            Retry remains free. Paid or ad continues grant temporary extra lives within the current
+            run; they are not a permanent unlock of all future lives. Ads and purchases may be
+            unavailable depending on region, consent, store status, or network conditions.
           </p>
         </details>
 
         <details>
-          <summary>5. What happens if a rewarded advertisement is unavailable?</summary>
+          <summary>7. What happens if a rewarded advertisement is unavailable?</summary>
           <p>
             If an ad cannot start, needs privacy consent, has no fill, or fails to finish, TapRush
             does <strong>not</strong> grant lives. You’ll see an in-game message such as checking
-            your connection, reviewing Ad Privacy in Settings, trying again later, or skipping to
-            a paid continue when purchases are available. You can always Retry or exit without
-            paying.
+            your connection, reviewing Ad Privacy in Settings, trying again later, or skipping to a
+            paid continue when purchases are available. You can always Retry or exit without paying.
           </p>
         </details>
 
         <details>
-          <summary>6. What should I do if my purchase doesn't appear?</summary>
+          <summary>8. What should I do if my purchase doesn't appear?</summary>
           <p>
             Purchases are confirmed by Apple or Google, then verified by TapRush before lives are
             granted. If payment is still processing, wait for the store confirmation. If nothing
@@ -165,18 +197,27 @@
         </details>
 
         <details>
-          <summary>7. How do I report a bug?</summary>
+          <summary>9. How do sharing and audio settings work?</summary>
+          <p>
+            From Results, you can share a text (and, when supported, image) summary of your clear.
+            In Settings you can toggle sound effects and background music independently, adjust
+            volumes when available, and control haptics / reduced effects. Music ducks during ads
+            and while the app is in the background.
+          </p>
+        </details>
+
+        <details>
+          <summary>10. How do I report a bug?</summary>
           <p>
             Use the contact section below. Include device model, OS version, TapRush version (from
-            the App Store / Play listing or in-app if shown), what you were doing, and a screenshot
-            if it helps. The more specific the steps to reproduce, the faster we can investigate.
+            the store listing or in-app if shown), what you were doing, and a screenshot if it
+            helps. The more specific the steps to reproduce, the faster we can investigate.
           </p>
         </details>
       </section>
 
-      <section class="panel" id="contact" aria-labelledby="contact-title">
+      <section class="card section" id="contact" aria-labelledby="contact-title">
         <h2 id="contact-title">Contact Support</h2>
-
         <p>
           Email:
           <a
@@ -204,8 +245,8 @@
         <p class="meta-line">
           Privacy:
           <a href="../privacy/">TapRush Privacy Policy</a>
-          · email
-          <a href="mailto:pompiko.support@gmail.com">pompiko.support@gmail.com</a>
+          · Game page:
+          <a href="../">TapRush</a>
         </p>
       </section>
     </main>
@@ -214,8 +255,9 @@
       <div class="site-footer__inner">
         <nav aria-label="Footer">
           <a href="../../">Home</a>
-          <a href="./">TapRush Support</a>
-          <a href="../privacy/">Privacy Policy</a>
+          <a href="../">TapRush</a>
+          <a href="./">Support</a>
+          <a href="../privacy/">Privacy</a>
         </nav>
         <p>
           <strong>Pompiko</strong> · Little Games. Big Fun. · TapRush: Beat the Clock

@@ -9,6 +9,7 @@
       content="Privacy Policy for TapRush: Beat the Clock — how Pompiko and Lumora Digital Ventures process information."
     />
     <meta name="theme-color" content="#6b3fd4" />
+    <link rel="canonical" href="https://lpkpuikee.github.io/pompiko-website/taprush/privacy/" />
     <link rel="icon" type="image/png" href="../../assets/img/favicon-48.png" />
     <link rel="apple-touch-icon" href="../../assets/img/taprush-icon-180.png" />
     <meta property="og:type" content="website" />
@@ -17,7 +18,7 @@
       property="og:description"
       content="Privacy disclosures for TapRush: Beat the Clock by Pompiko."
     />
-    <meta property="og:image" content="../../assets/img/taprush-icon-512.png" />
+    <meta property="og:image" content="https://lpkpuikee.github.io/pompiko-website/assets/img/taprush-icon-512.png" />
     <meta name="twitter:card" content="summary" />
     <link rel="stylesheet" href="../../assets/css/privacy.css" />
   </head>
@@ -29,7 +30,18 @@
           <span class="brand__mark">Pompiko</span>
           <span class="brand__tag">Games</span>
         </a>
-        <nav class="nav" aria-label="Primary">
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Menu"
+        >
+          Menu
+        </button>
+        <nav class="nav" id="primary-nav" aria-label="Primary">
+          <a href="../../">Home</a>
+          <a href="../">TapRush</a>
           <a href="../support/">Support</a>
           <a href="./" aria-current="page">Privacy</a>
         </nav>
@@ -516,8 +528,9 @@
       <div class="site-footer__inner">
         <nav aria-label="Footer">
           <a href="../../">Home</a>
-          <a href="../support/">TapRush Support</a>
-          <a href="./">Privacy Policy</a>
+          <a href="../">TapRush</a>
+          <a href="../support/">Support</a>
+          <a href="./">Privacy</a>
         </nav>
         <p>
           <strong>Pompiko</strong> · Little Games. Big Fun.
